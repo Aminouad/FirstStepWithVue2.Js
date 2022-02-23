@@ -7,14 +7,23 @@ const app = Vue.createApp({
     };
   },
   methods: {
+    outputFullname(){
+      if(this.name===''){
+        return '';
+      }
+        return this.name + ' ' +'Ouadrani';
+    },
     add(num) {
       this.counter = this.counter + num;
     },
     reduce(num) {
       this.counter = this.counter - num;
     },
-    setName(event, lastName) {
-      this.name = event.target.value + " " + lastName;
+    /* setName(event, lastName) {
+      this.name = event.target.value  + " " + lastName ;
+    } */
+    setName(event) {
+      this.name = event.target.value ;
     },
     submitForm(event) {
       //event.preventDefault(); to avoid refresh we can use it but we will deal with vue modifiers
@@ -23,6 +32,9 @@ const app = Vue.createApp({
     confirmInput() {
       this.confirmedInput = this.name;
     },
+    resetInput(){
+      this.name='';
+    }
   },
 });
 
