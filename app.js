@@ -6,8 +6,19 @@ const app = Vue.createApp({
       confirmedInput: "",
     };
   },
+  computed:{
+    fullname(){
+      console.log('Running again ...');
+     if(this.name===''){
+       return '';
+
+     }
+     return this.name + ' ' +'Ouadrani';   
+    }
+  },
   methods: {
     outputFullname(){
+      console.log('Running again ...');
       if(this.name===''){
         return '';
       }
@@ -39,3 +50,5 @@ const app = Vue.createApp({
 });
 
 app.mount('#events');
+
+

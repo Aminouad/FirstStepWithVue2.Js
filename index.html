@@ -30,7 +30,8 @@
   <p>Your Name:{{ confirmedInput }}</p>
  -->  
  <!-- <p>Your Name:{{ name }}</p>   interpolation --> 
-     <p>Your Name:{{ outputFullname() }}</p>
+     <!-- <p>Your Name:{{ outputFullname() }}</p> //In this case using methods when we change the counter value we can see that the methods was called even thoug we have not change the name So let's see with computed concept -->
+     <p>Your Name:{{ fullname }}</p> <!-- //In contrast with the computed use changing the counter does not effect the input field so fullname did not called => this methods is more effective --> 
  <!-- <form v-on:submit.prevent="submitForm"> //add the prevent modifier to prevent the reloading of the page
       <input type="text" />
       <button>Sign Up</button>
