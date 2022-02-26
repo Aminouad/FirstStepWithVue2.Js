@@ -4,12 +4,22 @@ const app = Vue.createApp({
       counter: 10,
       name: "",
       confirmedInput: "",
-      fullname:"",
+      // fullname:"",
       lastName:"",
     };
   },
   watch: {
-    name(value){
+counter(value){
+  if(value>50){
+    const that=this;
+    setTimeout(function(){
+      that.counter=0;
+    },2000)
+     //here the watcher shine when we have a condition where we need to change a propertie
+  }
+}
+
+    /* name(value){
       if(value===''){
         this.fullname='';
       }
@@ -20,17 +30,17 @@ const app = Vue.createApp({
         this.fullname='';
       }
       this.fullname=this.name + ' ' + value
-    }
+    } */
   },
   computed:{
-    /* fullname(){
+    fullname(){
       console.log('Running again ...');
-     if(this.name===''){
+     if(this.name==='' || this.lastName===''){
        return '';
 
      }
-     return this.name + ' ' +'Ouadrani';   
-    } */
+     return this.name + ' ' +this.lastName; //So easy just replace with the prop to change it Conclusion: the use of computed can change multiple prop instead of the use of watcher    
+    }
   },
   methods: {
     outputFullname(){
