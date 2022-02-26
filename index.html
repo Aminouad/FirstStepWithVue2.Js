@@ -24,6 +24,7 @@
 
     <!-- <input type="text" v-bind:value="name" v-on:input="setName($event,'ouadrani')" v-on:keyup.enter="confirmInput" /> --><!--  display the name until we press enter -->
     <input type="text" v-model="name"/> <!-- Concept named Two way Binding : v-model is the same as these two v-bind:value="name" v-on:input="setName($event,'ouadrani')" -->
+    <input type="text" v-model="lastName"/>
     <!-- if we have a multiple variable so how to deal with the event variable we act like this -->
     <button v-on:click="resetInput" >Reset Input</button>
 <!--     <p>Your Name:{{ confirmedInput }}</p>
